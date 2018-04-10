@@ -1,0 +1,21 @@
+<?php
+
+use yii\helpers\Html;
+
+
+/* @var $this yii\web\View */
+/* @var $model app\models\Slide */
+
+$this->title = Yii::t('app', 'Create Slide');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Slides'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="slide-create">
+
+    <div class="col-sm-4">
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+    </div>
+
+</div>

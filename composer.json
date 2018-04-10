@@ -1,0 +1,22 @@
+{
+    "name": "tomaivanovtomov/yii2-revolution",
+    "description": "Revolution slider",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toma Tomov",
+            "email": "tomaivanovtomov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+    "minimum-stability": "dev",
+	"autoload": {
+        "psr-4": {
+            "tomaivanovtomov\\revolution\\": ""
+        }
+    }
+}
