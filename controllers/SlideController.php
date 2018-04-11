@@ -1,10 +1,10 @@
 <?php
 
-namespace tomaivanovtomov\revolution\controllers;
+namespace tomaivanovtomov\slider\controllers;
 
 use Yii;
-use tomaivanovtomov\revolution\models\Slide;
-use tomaivanovtomov\revolution\models\SlideSearch;
+use tomaivanovtomov\slider\models\Slide;
+use tomaivanovtomov\slider\models\SlideSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -14,6 +14,7 @@ use yii\filters\VerbFilter;
  */
 class SlideController extends Controller
 {
+
     /**
      * @inheritdoc
      */

@@ -1,7 +1,7 @@
 # STILL IN DEVELOPMENT!!!!
-# DO NOT DOWNLOAD!!!!
-# yii2-revolution
-Yii2 revolution is an extension with revolution slider in it.
+# yii2-slider
+Yii2 slider is an extension with Owl Carousel 2.3.3 slider in it.<br />
+The slider has multilingual behaviour for title and description on each slide.
 <h2>Installation</h2>
 
 ```bash
@@ -33,4 +33,41 @@ Register revolution assets on top of your `layout\main.php`
 
 ```php
 \tomaivanovtomov\revolution\Assets::register($this);
+```
+
+Image path is set to `www.example.com/frontend/web` .
+
+<h2>Usage</h2>
+
+Call the widget and set the preferable options.<br />
+`height` - height of the slider.<br />
+`slides` - Images like an array of objects.
+
+```php
+
+    public static function getSliderImages()
+    {
+        return \tomaivanovtomov\slider\models\Slide::find()
+            ->joinWith('translation')
+            ->select(['slide.id', 'slideLang.title', 'slide.filename'])
+            ->where('slideLang.language=:lang', [':lang' => Yii::$app->language])
+            ->all();
+    } 
+```
+
+```php
+    echo \tomaivanovtomov\slider\widgets\Slider::widget([
+        'slides' => \tomaivanovtomov\slider\models\Slide::getSliderImages(),
+        'height' => 400,
+        'options' => [
+            'items' => 1
+        ]
+    ]);
+
+```
+
+All slider options can be seen at 
+
+```bash
+https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
 ```

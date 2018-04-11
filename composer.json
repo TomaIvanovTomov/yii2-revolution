@@ -1,6 +1,6 @@
 {
-    "name": "tomaivanovtomov/yii2-revolution",
-    "description": "Revolution slider",
+    "name": "tomaivanovtomov/yii2-slider",
+    "description": "Carousel 2.3.3",
     "type": "yii2-extension",
     "license": "MIT",
     "authors": [
@@ -12,12 +12,13 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
-        "omgdef/yii2-multilingual-behavior": "~2.0"
+        "omgdef/yii2-multilingual-behavior": "~2.0",
+        "kartik-v/yii2-widget-fileinput": "@dev"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
 	"autoload": {
         "psr-4": {
-            "tomaivanovtomov\\revolution\\": ""
+            "tomaivanovtomov\\slider\\": ""
         }
     }
 }

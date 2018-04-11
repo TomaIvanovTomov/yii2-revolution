@@ -22,7 +22,7 @@ use tomaivanovtomov\revolution\models\Slide;
                         'showMessage' => true,
                         'pluginOptions' => [
                               'initialPreview'=>[
-                                Html::img(Yii::getAlias('@images') . "/backend_images/".Slide::FOLDER_SLIDER."/" . $model->filename)
+                                $model->getImage()
                             ],
                             'overwriteInitial'=>true
                         ],
