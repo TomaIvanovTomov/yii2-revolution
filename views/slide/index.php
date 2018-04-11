@@ -67,7 +67,6 @@ $this->params['breadcrumbs'][] = $this->title;
     function addSlideModel(){
         let index = $('.slide-image-counter').length;
         if(index < 6){
-            console.log(location.href.split('/slider')[0]+"/slider/slide/add-slide");
             $.ajax({
                 method: "POST",
                 url: location.href.split('/slider')[0]+"/slider/slide/add-slide",

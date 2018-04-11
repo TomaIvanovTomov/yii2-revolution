@@ -1,11 +1,11 @@
 <?php
 
-namespace tomaivanovtomov\revolution\models;
+namespace tomaivanovtomov\slider\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use tomaivanovtomov\revolution\models\Slide;
+use tomaivanovtomov\slider\models\Slide;
 
 /**
  * SlideSearch represents the model behind the search form of `app\models\Slide`.

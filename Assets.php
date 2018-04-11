@@ -1,22 +1,19 @@
 <?php
 
-namespace tomaivanovtomov\revolution;
+namespace tomaivanovtomov\slider;
 
 use yii\web\AssetBundle;
 
 class Assets extends AssetBundle
 {
-    public $sourcePath = "@vendor/tomaivanovtomov/yii2-revolution/src";
+    public $sourcePath = "@vendor/tomaivanovtomov/yii2-slider/src";
     public $css = [
-        'fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css',
-        'css/settings.css',
-        'css/layers.css',
-        'css/navigation.css'
+        'dist/assets/owl.carousel.min.css',
+        'dist/assets/owl.theme.default.min.css',
+        'custom.css',
     ];
     public $js = [
-        'js/jquery.themepunch.tools.min.js',
-        'js/jquery.themepunch.revolution.min.js',
-        'js/revolution-custom.js',
+        'dist/owl.carousel.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

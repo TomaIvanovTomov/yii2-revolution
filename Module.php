@@ -1,6 +1,6 @@
 <?php
 
-namespace tomaivanovtomov\revolution;
+namespace tomaivanovtomov\slider;
 
 use yii\base\Module as BaseModule;
 
