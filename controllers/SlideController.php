@@ -2,6 +2,7 @@
 
 namespace tomaivanovtomov\slider\controllers;
 
+use yii\base\InvalidArgumentException;
 use Yii;
 use tomaivanovtomov\slider\models\Slide;
 use tomaivanovtomov\slider\models\SlideSearch;
@@ -72,32 +73,44 @@ class SlideController extends Controller
 
         if(isset(Yii::$app->request->post('Slide')['image'])){
 
-            for ($i = 0; $i < count(Yii::$app->request->post('Slide')['image']); $i++){
+            $images = Yii::$app->request->post('Slide');
 
-                $id = (int)Yii::$app->request->post('Slide')['model_id'][$i];
+            Slide::deleteRemovedImages($images['image']);
 
-                //Check if new record
-                if(Yii::$app->request->post('Slide')['is_new'][$i] == 1){
-                    $model = new Slide();
+            $i = 0;
+            $images_keys = array_keys($images['image']);
 
-                    //Save the model to create id
-                    $model->save();
+            while ($i <= end($images_keys))
+            {
+                if(isset($images['model_id'][$i])){
 
-                    $id = $model->id;
+                    $id = (int)$images['model_id'][$i];
+
+                    //Check if new record
+                    if($images['is_new'][$i] == 1){
+                        $model = new Slide();
+
+                        //Save the model to create id
+                        $model->save();
+
+                        $id = $model->id;
+                    }
+
+                    //Retrive the model again
+                    $model = $this->findModel($id, true);
+
+                    $model->loadModels($i);
+
+                    if($model->update() === false){
+
+                        $is_OK = false;
+                        throw new InvalidArgumentException;
+
+                    }
+
                 }
 
-                //Retrive the model again
-                $model = $this->findModel($id, true);
-
-                $model->loadModels($i);
-
-                if($model->update() === false){
-
-                    $is_OK = false;
-                    break;
-
-                }
-
+                $i++;
             }
 
             if($is_OK){
@@ -163,6 +176,23 @@ class SlideController extends Controller
             'model' => $model,
             'index' => Yii::$app->request->post('index')
         ]);
+    }
+
+    /**
+     * Delete image via ajax
+     */
+    public function actionDeleteImage()
+    {
+        $slide_id = Yii::$app->request->post('id');
+        $image = Slide::findOne($slide_id);
+        if(!empty($image)){
+            $path = $image->getImagePath() . "/backend_images/".Slide::FOLDER_SLIDER."/" . $image->filename;
+            if(file_exists($path)){
+                unlink($path);
+            }
+
+            $image->delete();
+        }
     }
 
     /**

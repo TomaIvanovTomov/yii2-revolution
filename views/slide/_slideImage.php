@@ -16,17 +16,20 @@ use tomaivanovtomov\revolution\models\Slide;
 
             <div class="col-sm-12">
                 <?=
-                    FileInput::widget([
-                        'model' => $model,
-                        'attribute' => "image[$index]",
-                        'showMessage' => true,
-                        'pluginOptions' => [
-                              'initialPreview'=>[
-                                $model->getImage()
-                            ],
-                            'overwriteInitial'=>true
+                FileInput::widget([
+                    'model' => $model,
+                    'attribute' => "image[$index]",
+                    'showMessage' => true,
+                    'pluginOptions' => [
+                        'showRemove' => false,
+                        'showCaption' => false,
+                        'showUpload' => false,
+                        'initialPreview'=>[
+                            $model->getImage()
                         ],
-                    ])
+                        'overwriteInitial'=>true
+                    ],
+                ])
                 ?>
             </div>
 

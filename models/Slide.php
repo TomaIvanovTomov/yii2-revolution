@@ -209,4 +209,41 @@ class Slide extends ActiveRecord
             ->where('slideLang.language=:lang', [':lang' => Yii::$app->language])
             ->all();
     }
+
+    public static function deleteRemovedImages($images)
+    {
+        $searchModel = new SlideSearch();
+        $slide_models = $searchModel->search(Yii::$app->request->queryParams)->getModels();
+
+        //Get images on update keys
+        $images_keys = array_keys($images);
+
+        //Get images from database keys
+        $slide_models_keys = array_keys($slide_models);
+
+        $diffs = array_diff($slide_models_keys, $images_keys);
+
+        foreach ($diffs as $diff){
+            $file = isset($_SERVER['HTTPS']) ? 'https' : 'http' . "://" . $_SERVER['HTTP_HOST'] . '\frontend\web' . "/" . Slide::FOLDER_SLIDER . "/" . $slide_models[$diff]->filename;
+
+            //Delete image from slides folder
+            if(file_exists($file)){
+                unlink($file);
+            }
+
+            //Delete record from database
+            $slide_models[$diff]->delete();
+        }
+
+    }
+
+    /**
+     * Get images absolute path
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->image_path;
+    }
 }

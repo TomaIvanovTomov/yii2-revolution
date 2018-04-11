@@ -13,7 +13,8 @@ class Assets extends AssetBundle
         'custom.css',
     ];
     public $js = [
-        'dist/owl.carousel.min.js'
+        'dist/owl.carousel.min.js',
+        'custom.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
