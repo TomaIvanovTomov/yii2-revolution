@@ -185,7 +185,7 @@ class Slide extends ActiveRecord
         return $output;
     }
 
-    public function getImage($height)
+    public function getImage($height = null)
     {
         $image = $this->image_path . "/" . Slide::FOLDER_SLIDER . "/" . $this->filename;
 
