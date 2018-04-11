@@ -97,7 +97,7 @@ class Slide extends ActiveRecord
             ['title', 'string', 'max' => 255],
             [$string, 'string'],
             ['description', 'string'],
-            [['image'], 'file', 'extensions' => Yii::$app->params['availableImageExtensions']],
+            [['image'], 'file', 'extensions' => ['jpg', 'png', 'gif', 'jpeg']],
         ];
     }
 
