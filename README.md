@@ -25,7 +25,7 @@ Add the Module class to `config.php`:
 Create the two tables - `slide` and `slideLang`
 
 ```bash
-php yii migrate/up --migrationPath=@vendor/tomaivanovtomov/yii2-revolution/migrations
+php yii migrate/up --migrationPath=@vendor/tomaivanovtomov/yii2-slider/migrations
 ```
 
 <h2>Register assets</h2>
