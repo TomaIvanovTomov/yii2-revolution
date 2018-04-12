@@ -14,7 +14,8 @@
         "yiisoft/yii2": "*",
         "omgdef/yii2-multilingual-behavior": "~2.0",
         "kartik-v/yii2-widget-fileinput": "@dev",
-	    "kartik-v/yii2-sortable": "*"
+	    "kartik-v/yii2-sortable": "*",
+        "tomaivanovtomov/yii2-slider": "^1.0.2"
     },
     "minimum-stability": "stable",
 	"autoload": {

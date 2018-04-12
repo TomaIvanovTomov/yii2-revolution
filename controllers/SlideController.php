@@ -188,7 +188,7 @@ class SlideController extends Controller
 
             foreach (Yii::$app->request->post('Slide') as $id){
 
-                if( !( $model->reorderSlide($id, $sort) )){
+                if( $model->reorderSlide($id, $sort) === false ){
                     Yii::$app->session->setFlash('error', Yii::t('app', 'Something went wrong! Please, try again.'));
                     return $this->render('_sort', [
                         'result' => $model->loadSortable()

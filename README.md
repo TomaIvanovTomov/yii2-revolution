@@ -71,3 +71,17 @@ All slider options can be seen at
 ```bash
 https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
 ```
+
+<h2>Multilingual part</h2>
+Copy these line in `params.php`:
+
+```php
+'languages' => [
+    'bg' => 'bg',
+    'en' => 'en',
+],
+'languageDefault' => 'bg',
+'availableImageExtensions' => ['jpeg','jpg','png','gif']
+```
+
+This portion of code is linked with the multilingual model functionality. You can override the model and adapt it to your needs. 
