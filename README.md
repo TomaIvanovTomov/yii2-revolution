@@ -5,7 +5,7 @@ The slider has multilingual behaviour for title and description on each slide.
 <h2>Installation</h2>
 
 ```bash
-composer require tomaivanovtomov/yii2-revolution "^1.0.0"
+composer require tomaivanovtomov/yii2-revolution "^1.0.1"
 ```
 
 <h2>Configuration</h2>

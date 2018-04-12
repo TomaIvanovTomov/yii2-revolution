@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="487c3843-b525-4540-ac1d-83c2dd60198e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SlideController.php" afterPath="$PROJECT_DIR$/controllers/SlideController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Slide.php" afterPath="$PROJECT_DIR$/models/Slide.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/custom.js" afterPath="$PROJECT_DIR$/src/custom.js" />
-    </list>
+    <list default="true" id="487c3843-b525-4540-ac1d-83c2dd60198e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +15,8 @@
       <file leaf-file-name="Slide.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Slide.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+            <state relative-caret-position="235">
+              <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -31,7 +26,7 @@
         <entry file="file://$PROJECT_DIR$/controllers/SlideController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="187" column="27" lean-forward="true" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
+              <caret line="187" column="27" lean-forward="false" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
               <folding>
                 <element signature="e#54#92#0#PHP" expanded="true" />
               </folding>
@@ -73,13 +68,18 @@
         <entry file="file://$PROJECT_DIR$/src/custom.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="490">
-              <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>__const</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -236,15 +236,15 @@
       <workItem from="1523365327346" duration="110000" />
       <workItem from="1523427457664" duration="98000" />
       <workItem from="1523435797956" duration="16000" />
-      <workItem from="1523441642179" duration="1333000" />
+      <workItem from="1523441642179" duration="1558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2561000" />
+    <option name="totallyTimeSpent" value="2786000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332623" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -355,7 +355,7 @@
     <entry file="file://$PROJECT_DIR$/src/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
-          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
+          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -363,7 +363,7 @@
     <entry file="file://$PROJECT_DIR$/controllers/SlideController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="187" column="27" lean-forward="true" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
+          <caret line="187" column="27" lean-forward="false" selection-start-line="187" selection-start-column="27" selection-end-line="187" selection-end-column="27" />
           <folding>
             <element signature="e#54#92#0#PHP" expanded="true" />
           </folding>
@@ -372,8 +372,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Slide.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="213" column="5" lean-forward="true" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
+        <state relative-caret-position="235">
+          <caret line="37" column="27" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="27" />
           <folding />
         </state>
       </provider>
