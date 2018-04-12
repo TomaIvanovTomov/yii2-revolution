@@ -203,7 +203,7 @@ class Slide extends ActiveRecord
 
     public static function getSliderImages()
     {
-        return \tomaivanovtomov\slider\models\Slide::find()
+        return Slide::find()
             ->joinWith('translation')
             ->select(['slide.id', 'slideLang.title', 'slide.filename'])
             ->where('slideLang.language=:lang', [':lang' => Yii::$app->language])
@@ -235,6 +235,37 @@ class Slide extends ActiveRecord
             $slide_models[$diff]->delete();
         }
 
+    }
+
+    public function loadSortable()
+    {
+        $slider = Slide::find()->select(['id', 'sort', 'filename'])->orderBy('sort ASC')->asArray()->all();
+
+        $output = [];
+
+        foreach ($slider as $slide) {
+            $output[] = [
+                'content' =>
+                    "<div class=\"grid-item text-danger\" style='width: 150px; height: 150px;'><input type='hidden' name='Slide[{$slide['id']}]' value='{$slide['id']}'>
+                        ".Html::img($this->getImagePath() . "/" . Slide::FOLDER_SLIDER . "/" . $slide['filename'],
+                        [
+                            'style' => 'max-width: 100%; height: 100%; pointer-events: none;'
+                        ])."
+                    </div>"
+            ];
+        }
+
+        return $output;
+    }
+
+    public function reorderSlide($id, $sort)
+    {
+        $model = Slide::findOne((int)$id);
+        $model->sort = $sort;
+
+        if($model->update() === false){
+            return false;
+        }
     }
 
     /**

@@ -5,3 +5,10 @@
     opacity: 0.6;
     pointer-events: none;
 }
+.sortable.grid li {
+    float: left;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    padding: 0;
+}

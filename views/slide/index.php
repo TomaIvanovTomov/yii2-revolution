@@ -19,6 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-sm-12">
         <div class="form-group">
             <button type="button" class="btn btn-primary" onclick="addSlideModel(this)"><?= Yii::t('app', 'Add slide') ?></button>
+            <?= Html::a(Yii::t('app', 'Sort'), ['sort'], ['class' => 'btn btn-success']); ?>
         </div>
     </div>
 

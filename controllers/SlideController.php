@@ -178,6 +178,34 @@ class SlideController extends Controller
         ]);
     }
 
+    public function actionSort()
+    {
+        $model = new Slide();
+
+        if(Yii::$app->request->post()){
+
+            $sort = 1;
+
+            foreach (Yii::$app->request->post('Slide') as $id){
+
+                if( !( $model->reorderSlide($id, $sort) )){
+                    Yii::$app->session->setFlash('error', Yii::t('app', 'Something went wrong! Please, try again.'));
+                    return $this->render('_sort', [
+                        'result' => $model->loadSortable()
+                    ]);
+                }
+
+                $sort++;
+
+            }
+
+        }
+
+        return $this->render('_sort', [
+            'result' => $model->loadSortable()
+        ]);
+    }
+
     /**
      * Delete image via ajax
      */
