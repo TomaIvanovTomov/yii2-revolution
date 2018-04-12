@@ -42,7 +42,7 @@ class SlideSearch extends Slide
      */
     public function search($params)
     {
-        $query = Slide::find()->joinWith('translations');
+        $query = Slide::find()->joinWith('translations')->orderBy('sort ASC');
 
         // add conditions that should always apply here
 
