@@ -207,6 +207,7 @@ class Slide extends ActiveRecord
             ->joinWith('translation')
             ->select(['slide.id', 'slideLang.title', 'slide.filename'])
             ->where('slideLang.language=:lang', [':lang' => Yii::$app->language])
+            ->orderBy('sort ASC')
             ->all();
     }
 
