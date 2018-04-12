@@ -199,6 +199,8 @@ class SlideController extends Controller
 
             }
 
+            Yii::$app->session->setFlash('success', Yii::t('app', 'Order was updated successfully!'));
+
         }
 
         return $this->render('_sort', [
