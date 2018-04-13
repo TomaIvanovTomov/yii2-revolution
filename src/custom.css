@@ -31,3 +31,27 @@
 .file-drop-zone{
     border: none;
 }
+
+.slider-title{
+    position: absolute;
+    top: 10%;
+    font-size: 4vw;
+    color: white;
+    font-family: cursive;
+    max-width: 50vw;
+    max-height: 5vw;
+    overflow: hidden;
+}
+
+.slider-description{
+    position: absolute;
+    top: 50%;
+    font-size: 2vw;
+    color: white;
+    right: 0;
+    font-family: cursive;
+    max-width: 50vw;
+    max-height: 8vw;
+    overflow: hidden;
+    text-indent: 40px;
+}

@@ -33,23 +33,19 @@ $(window).on('load', function () {
 
     })
 
+    translate();
+
 });
 
-/*
- function reorderImages() {
- var pattern = $("input[name^='Slide[image]']");
- var fileInputs = pattern.filter("input[type='file']");
- var hiddenInputs = pattern.filter("input[type='hidden']");
- var isNewInputs = $("input[name^='Slide[is_new]']");
- var modelIdInputs = $("input[name^='Slide[model_id]']");
- //Throw the initial inputs
- Array.prototype.shift.apply(fileInputs);
- Array.prototype.shift.apply(hiddenInputs);
+function translate() {
 
- for(var i=0; i<fileInputs.length; i++){
- fileInputs[i].setAttribute('name', 'Slide[image]['+i+']');
- hiddenInputs[i].setAttribute('name', 'Slide[image]['+i+']');
- isNewInputs[i].setAttribute('name', 'Slide[is_new]['+i+']');
- modelIdInputs[i].setAttribute('name', 'Slide[model_id]['+i+']');
- }
- }*/
+    $('.slider-title')
+        .animate({
+            left: "10%",
+        }, 600);
+
+    $('.slider-description')
+        .animate({
+            right: "10%",
+        }, 600);
+}
