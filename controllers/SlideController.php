@@ -21,18 +21,6 @@ class SlideController extends Controller
     public function behaviors()
     {
         return [
-            [
-                'class' => 'yii\filters\PageCache',
-                'only' => ['index'],
-                'duration' => 0,
-                'variations' => [
-                    \Yii::$app->language,
-                ],
-                'dependency' => [
-                    'class' => 'yii\caching\DbDependency',
-                    'sql' => 'SELECT * FROM slide LEFT JOIN slideLang ON slide.id=slideLang.slide_id',
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

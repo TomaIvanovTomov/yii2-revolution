@@ -204,8 +204,8 @@ class Slide extends ActiveRecord
     public static function getSliderImages()
     {
         return Slide::find()
-            ->joinWith('translation')
             ->select(['slide.id', 'slideLang.title', 'slide.filename'])
+            ->leftJoin('slideLang', 'slide.id=slideLang.slide_id')
             ->where('slideLang.language=:lang', [':lang' => Yii::$app->language])
             ->orderBy('sort ASC')
             ->all();

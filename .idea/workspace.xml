@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="487c3843-b525-4540-ac1d-83c2dd60198e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/SlideController.php" afterPath="$PROJECT_DIR$/controllers/SlideController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Slide.php" afterPath="$PROJECT_DIR$/models/Slide.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/custom.css" afterPath="$PROJECT_DIR$/src/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/slide/index.php" afterPath="$PROJECT_DIR$/views/slide/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,25 +18,25 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Slide.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/Slide.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/slide/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-              <folding>
-                <marker date="1523604328514" expanded="true" signature="7339:7367" ph="..." />
-                <marker date="1523604328514" expanded="true" signature="7368:7732" ph="..." />
-              </folding>
+            <state relative-caret-position="1071">
+              <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/custom.css">
+      <file leaf-file-name="Slide.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/Slide.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="395">
+              <caret line="206" column="31" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="31" />
+              <folding>
+                <marker date="1523607017957" expanded="true" signature="7368:7396" ph="..." />
+                <marker date="1523607017957" expanded="true" signature="7397:7761" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -58,6 +62,7 @@
       <find>slide</find>
       <find>slideLang</find>
       <find>slidelang</find>
+      <find>getSlider</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -67,17 +72,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/views/slide/_slideImage.php" />
-        <option value="$PROJECT_DIR$/views/slide/index.php" />
         <option value="$PROJECT_DIR$/src/custom.js" />
         <option value="$PROJECT_DIR$/src/package-lock.json" />
-        <option value="$PROJECT_DIR$/controllers/SlideController.php" />
         <option value="$PROJECT_DIR$/models/SlideSearch.php" />
         <option value="$PROJECT_DIR$/src/src/animate.css" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Assets.php" />
-        <option value="$PROJECT_DIR$/models/Slide.php" />
+        <option value="$PROJECT_DIR$/controllers/SlideController.php" />
+        <option value="$PROJECT_DIR$/views/slide/index.php" />
         <option value="$PROJECT_DIR$/src/custom.css" />
+        <option value="$PROJECT_DIR$/models/Slide.php" />
       </list>
     </option>
   </component>
@@ -133,7 +138,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="slide" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -147,7 +156,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,12 +275,12 @@
       <workItem from="1523598411841" duration="2190000" />
       <workItem from="1523600858698" duration="16000" />
       <workItem from="1523602849376" duration="5000" />
-      <workItem from="1523604257344" duration="669000" />
+      <workItem from="1523604257344" duration="2625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11371000" />
+    <option name="totallyTimeSpent" value="13327000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="0" />
@@ -334,8 +343,8 @@
         <state relative-caret-position="3604">
           <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding>
-            <marker date="1523604328514" expanded="true" signature="7339:7367" ph="..." />
-            <marker date="1523604328514" expanded="true" signature="7368:7732" ph="..." />
+            <marker date="1523607017957" expanded="true" signature="7368:7396" ph="..." />
+            <marker date="1523607017957" expanded="true" signature="7397:7761" ph="..." />
           </folding>
         </state>
       </provider>
@@ -489,20 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/SlideController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="201" column="102" lean-forward="false" selection-start-line="201" selection-start-column="102" selection-end-line="201" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/slide/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -511,22 +506,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/Slide.php">
+    <entry file="file://$PROJECT_DIR$/views/slide/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
-          <folding>
-            <marker date="1523604328514" expanded="true" signature="7339:7367" ph="..." />
-            <marker date="1523604328514" expanded="true" signature="7368:7732" ph="..." />
-          </folding>
+        <state relative-caret-position="1071">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="416">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/SlideController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="25" column="30" lean-forward="false" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/Slide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="206" column="31" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="31" />
+          <folding>
+            <marker date="1523607017957" expanded="true" signature="7368:7396" ph="..." />
+            <marker date="1523607017957" expanded="true" signature="7397:7761" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

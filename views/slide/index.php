@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="col-sm-12">
+
         <?php
 
         $form = ActiveForm::begin([
@@ -52,16 +53,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ?>
 
-        <div class="col-sm-12">
-            <div class="form-group mt20">
-                <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
-            </div>
-        </div>
-
-        <?php
-        ActiveForm::end();
-        ?>
     </div>
+
+    <div class="col-sm-12">
+        <div class="form-group mt20">
+            <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        </div>
+    </div>
+
+    <?php
+    ActiveForm::end();
+    ?>
 
 </div>
 

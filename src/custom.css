@@ -15,11 +15,19 @@
     padding: 0;
 }
 
-.kv-file-content img {
+.kv-file-content img, .kv-zoom-body.file-zoom-content img {
     max-width: 100%;
     max-height: 100%;
 }
 
-.display-n{
+.display-n, .kv-file-remove.btn.btn-sm.btn-kv.btn-default.btn-outline-secondary, .file-drag-handle.drag-handle-init.text-info{
     display: none!important;
+}
+
+.mt20{
+    margin-top: 20px;
+}
+
+.file-drop-zone{
+    border: none;
 }
