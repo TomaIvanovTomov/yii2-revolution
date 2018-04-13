@@ -114,7 +114,7 @@ class Slide extends ActiveRecord
         ];
     }
 
-    public function upload($index)
+    public function upload($index, $new_record)
     {
         if ($this->validate(['image'])) {
 
@@ -122,7 +122,7 @@ class Slide extends ActiveRecord
 
             if(!empty($this->image)){
 
-                $brand_dir = Yii::getAlias('@frontend/web') . "/".Slide::FOLDER_SLIDER."/";
+                $brand_dir = Yii::getAlias('@frontend/web') . "/" .Slide::FOLDER_SLIDER . "/";
 
                 if(!file_exists($brand_dir)){
                     mkdir( $brand_dir, 0777, true );
@@ -134,15 +134,22 @@ class Slide extends ActiveRecord
 
                 $this->image = null;
             }else{
+                if($new_record !== false){
+                    Yii::$app->session->setFlash('warning',  Yii::t('app', 'Images are mandatory! Records without images are not saved'));
+                    $this->delete();
+                }
                 return false;
             }
 
         } else {
+            if($this->isNewRecord){
+                $this->delete();
+            }
             return false;
         }
     }
 
-    public function loadModels($index)
+    public function loadModels($index, $new_record)
     {
         $props = ['title', 'description'];
 
@@ -158,7 +165,7 @@ class Slide extends ActiveRecord
         $this->title = Yii::$app->request->post('Slide')["title"][$index];
         $this->description = Yii::$app->request->post('Slide')["description"][$index];
 
-        $this->upload($index);
+        $this->upload($index, $new_record);
 
     }
 

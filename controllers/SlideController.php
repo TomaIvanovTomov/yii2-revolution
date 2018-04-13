@@ -9,6 +9,7 @@ use tomaivanovtomov\slider\models\SlideSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SlideController implements the CRUD actions for Slide model.
@@ -85,20 +86,25 @@ class SlideController extends Controller
 
                     $id = (int)$images['model_id'][$i];
 
+                    $new_record = false;
+
                     //Check if new record
                     if($images['is_new'][$i] == 1){
+
                         $model = new Slide();
 
                         //Save the model to create id
                         $model->save();
 
                         $id = $model->id;
+
+                        $new_record = true;
                     }
 
                     //Retrive the model again
                     $model = $this->findModel($id, true);
 
-                    $model->loadModels($i);
+                    $model->loadModels($i, $new_record);
 
                     if($model->update() === false){
 
