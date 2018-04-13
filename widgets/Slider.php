@@ -7,6 +7,14 @@ use yii\base\Widget;
 class Slider extends Widget
 {
     /**
+     * Fragment caching dependency
+     */
+    const DEPENDENCY = [
+        'class' => 'yii\caching\DbDependency',
+        'sql' => 'SELECT * FROM slide LEFT JOIN slideLang ON slide.id=slideLang.slide_id'
+    ];
+
+    /**
      * Slide objects
      *
      * @var array

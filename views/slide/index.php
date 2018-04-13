@@ -23,43 +23,45 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-    <?php
-
-    $form = ActiveForm::begin([
-        'options' => [
-            'multipart/form-data'
-        ],
-        'action' =>  [
-            'slide/create'
-        ],
-        'id' => 'slides'
-    ]);
-
-    //Hidden model to enable UploadFile class
-    echo $form->field($hidden, 'image[]')->fileInput(['class' => 'display-n'])->label(false);
-
-    echo ListView::widget([
-        'dataProvider' => $dataProvider,
-        'layout' => "{items}",
-        'itemView' => function( $model, $key, $index, $widget ){
-            return $this->render("_slideImage", [
-                'model' => $model,
-                'index' => $index
-            ]);
-        },
-    ]);
-
-    ?>
-
     <div class="col-sm-12">
-        <div class="form-group mt20">
-            <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
-        </div>
-    </div>
+        <?php
 
-    <?php
-    ActiveForm::end();
-    ?>
+        $form = ActiveForm::begin([
+            'options' => [
+                'multipart/form-data'
+            ],
+            'action' =>  [
+                'slide/create'
+            ],
+            'id' => 'slides'
+        ]);
+
+        //Hidden model to enable UploadFile class
+        echo $form->field($hidden, 'image[]')->fileInput(['class' => 'display-n'])->label(false);
+
+        echo ListView::widget([
+            'dataProvider' => $dataProvider,
+            'layout' => "{items}",
+            'itemView' => function( $model, $key, $index, $widget ){
+                return $this->render("_slideImage", [
+                    'model' => $model,
+                    'index' => $index
+                ]);
+            },
+        ]);
+
+        ?>
+
+        <div class="col-sm-12">
+            <div class="form-group mt20">
+                <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+            </div>
+        </div>
+
+        <?php
+        ActiveForm::end();
+        ?>
+    </div>
 
 </div>
 

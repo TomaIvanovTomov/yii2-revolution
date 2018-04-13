@@ -1,3 +1,6 @@
+<?php
+use tomaivanovtomov\slider\widgets\Slider;
+?>
 
 <div class="carouser-wrapper">
 
@@ -5,16 +8,23 @@
 
         <div class="owl-carousel owl-theme">
 
-            <?php foreach ($slides as $slide) : ?>
+            <?php if ($this->beginCache('slide', ['dependency' => Slider::DEPENDENCY])) : ?>
 
-                <div>
-                    <?= $slide->getImage($height) ?>
-                </div>
+                <?php foreach ($slides as $slide) : ?>
 
-            <?php endforeach; ?>
+                    <div>
+                        <?= $slide->getImage($height) ?>
+                    </div>
+
+                <?php endforeach; ?>
+
+                <?php $this->endCache(); ?>
+
+            <?php endif; ?>
 
         </div>
 
     <?php endif; ?>
 
 </div>
+

@@ -51,8 +51,8 @@ class Slide extends ActiveRecord
     public function behaviors()
     {
         $allLanguages = [];
-        foreach (Yii::$app->params['languages'] as $title => $language) {
-            $allLanguages[$title] = $language;
+        foreach (Yii::$app->params['language-information'] as $language) {
+            $allLanguages[$language['extension']] = $language['extension'];
         }
 
         return [
@@ -97,7 +97,7 @@ class Slide extends ActiveRecord
             ['title', 'string', 'max' => 255],
             [$string, 'string'],
             ['description', 'string'],
-            [['image'], 'file', 'extensions' => ['jpg', 'png', 'gif', 'jpeg']],
+            [['image'], 'file', 'extensions' => ['jpg', 'png', 'jpeg']],
         ];
     }
 
@@ -149,11 +149,11 @@ class Slide extends ActiveRecord
     {
         $props = ['title', 'description'];
 
-        foreach (Yii::$app->params['languages'] as $language) {
-            if (Yii::$app->params['languageDefault'] != $language) {
+        foreach (Yii::$app->params['language-information'] as $language) {
+            if (Yii::$app->params['languageDefault'] != $language['extension']) {
                 foreach ($props as $property) {
-                    $prop_lang = "{$property}_{$language}";
-                    $this->$prop_lang = Yii::$app->request->post('Slide')["{$property}_{$language}"][$index];
+                    $prop_lang = "{$property}_{$language['extension']}";
+                    $this->$prop_lang = Yii::$app->request->post('Slide')["{$property}_{$language['extension']}"][$index];
                 }
             }
         }
@@ -175,9 +175,9 @@ class Slide extends ActiveRecord
         $output = [];
 
         foreach ($fields as $field) {
-            foreach (Yii::$app->params['languages'] as $language) {
-                if (Yii::$app->params['languageDefault'] != $language) {
-                    $output[] = "{$field}_{$language}";
+            foreach (Yii::$app->params['language-information'] as $language) {
+                if (Yii::$app->params['languageDefault'] != $language['extension']) {
+                    $output[] = "{$field}_{$language['extension']}";
                 }
             }
         }
