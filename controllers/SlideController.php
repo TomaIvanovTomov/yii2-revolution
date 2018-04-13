@@ -215,7 +215,7 @@ class SlideController extends Controller
         $slide_id = Yii::$app->request->post('id');
         $image = Slide::findOne($slide_id);
         if(!empty($image)){
-            $path = $image->getImagePath() . "/backend_images/".Slide::FOLDER_SLIDER."/" . $image->filename;
+            $path = Yii::getAlias("@frontend/web") . "/" . Slide::FOLDER_SLIDER . "/" . $image->filename;
             if(file_exists($path)){
                 unlink($path);
             }

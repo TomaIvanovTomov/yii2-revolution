@@ -2,6 +2,7 @@
 
 namespace tomaivanovtomov\slider\models;
 
+use tomaivanovtomov\slider\widgets\Slider;
 use Yii;
 use omgdef\multilingual\MultilingualQuery;
 use omgdef\multilingual\MultilingualBehavior;
@@ -26,21 +27,15 @@ class Slide extends ActiveRecord
      */
     const FOLDER_SLIDER = "slides";
 
-    /**
-     * The image folder path
-     *
-     * @var
-     */
-    private $image_path;
-
     public $image;
+
+    private $image_path;
 
     public function __construct(array $config = [])
     {
         parent::__construct($config);
 
-        $this->image_path = isset($_SERVER['HTTPS']) ? 'https' : 'http' . "://" . $_SERVER['HTTP_HOST'] . '\frontend\web';
-        /*$this->image_path = 'C:\xampp\htdocs\test\frontend\web';*/
+        $this->image_path = isset($_SERVER['HTTPS']) ? 'https' : 'http' . "://" . $_SERVER['HTTP_HOST'] . "/";
     }
 
     public static function find()
@@ -126,12 +121,14 @@ class Slide extends ActiveRecord
             $this->image = UploadedFile::getInstance($this, "image[$index]");
 
             if(!empty($this->image)){
-                $brand_dir = $this->image_path . "/".Slide::FOLDER_SLIDER."/";
+
+                $brand_dir = Yii::getAlias('@frontend/web') . "/".Slide::FOLDER_SLIDER."/";
+
                 if(!file_exists($brand_dir)){
                     mkdir( $brand_dir, 0777, true );
                 }
 
-                $this->image->saveAs($this->image_path . "/".Slide::FOLDER_SLIDER."/" . $this->id . "_" . $this->image->name);
+                $this->image->saveAs(Yii::getAlias('@frontend/web') . "/".Slide::FOLDER_SLIDER."/" . $this->id . "_" . $this->image->name);
 
                 $this->filename = "{$this->id}_{$this->image->name}";
 
@@ -187,18 +184,15 @@ class Slide extends ActiveRecord
 
     public function getImage($height = null)
     {
-        $image = $this->image_path . "/" . Slide::FOLDER_SLIDER . "/" . $this->filename;
+        $image = $this->image_path . Slide::FOLDER_SLIDER . "/" . $this->filename;
 
-        return Html::img( $image , [
-            'style' => "height:{$height}px",
-            'alt' => $this->title,
-            "title" => $this->title
-        ]);
-
-        //Function doesn't return correct bool
-        /*if(file_exists($image)){
-            return Html::img( $image , ['alt' => $this->title, "title" => $this->title]);
-        }*/
+        if(file_exists(Yii::getAlias('@frontend/web')."/".Slide::FOLDER_SLIDER."/".$this->filename)){
+            return Html::img( $image , [
+                'style' => "height:{$height}px",
+                'alt' => $this->title,
+                "title" => $this->title
+            ]);
+        }
     }
 
     public static function getSliderImages()
@@ -225,10 +219,10 @@ class Slide extends ActiveRecord
         $diffs = array_diff($slide_models_keys, $images_keys);
 
         foreach ($diffs as $diff){
-            $file = isset($_SERVER['HTTPS']) ? 'https' : 'http' . "://" . $_SERVER['HTTP_HOST'] . '\frontend\web' . "/" . Slide::FOLDER_SLIDER . "/" . $slide_models[$diff]->filename;
+            $file = isset($_SERVER['HTTPS']) ? 'https' : 'http' . "://" . $_SERVER['HTTP_HOST'] . "/" . Slide::FOLDER_SLIDER . "/" . $slide_models[$diff]->filename;
 
             //Delete image from slides folder
-            if(file_exists($file)){
+            if(file_exists(Yii::getAlias('@frontend/web')."/".Slide::FOLDER_SLIDER."/".$slide_models[$diff]->filename)){
                 unlink($file);
             }
 
@@ -248,7 +242,7 @@ class Slide extends ActiveRecord
             $output[] = [
                 'content' =>
                     "<div class=\"grid-item text-danger\" style='width: 150px; height: 150px;'><input type='hidden' name='Slide[{$slide['id']}]' value='{$slide['id']}'>
-                        ".Html::img($this->getImagePath() . "/" . Slide::FOLDER_SLIDER . "/" . $slide['filename'],
+                        ".Html::img($this->image_path . Slide::FOLDER_SLIDER . "/" . $slide['filename'],
                         [
                             'style' => 'max-width: 100%; height: 100%; pointer-events: none;'
                         ])."
@@ -269,13 +263,4 @@ class Slide extends ActiveRecord
         }
     }
 
-    /**
-     * Get images absolute path
-     *
-     * @return string
-     */
-    public function getImagePath()
-    {
-        return $this->image_path;
-    }
 }
