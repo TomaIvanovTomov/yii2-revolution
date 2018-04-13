@@ -66,7 +66,7 @@ class Slide extends ActiveRecord
                 //'langClassName' => PostLang::className(), // or namespace/for/a/class/PostLang
                 'defaultLanguage' => Yii::$app->params['languageDefault'],
                 'langForeignKey' => 'slide_id',
-                'tableName' => "{{%slidelang}}",
+                'tableName' => "{{%slideLang}}",
                 'attributes' => [
                     'title',
                     'description',
