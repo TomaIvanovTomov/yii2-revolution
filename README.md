@@ -76,12 +76,17 @@ https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
 Copy these line in `params.php`:
 
 ```php
-'languages' => [
-    'bg' => 'bg',
-    'en' => 'en',
+'language-information' => [
+    'BG' => [
+        'title' => 'Български',
+        'extension' => 'bg',
+    ],
+    'EN' => [
+        'title' => 'English',
+        'extension' => 'en',
+    ],
 ],
-'languageDefault' => 'bg',
-'availableImageExtensions' => ['jpeg','jpg','png','gif']
+'languageDefault' => 'bg'
 ```
 
 This portion of code is linked with the multilingual model functionality. You can override the model and adapt it to your needs. 
