@@ -10,7 +10,7 @@ class Assets extends AssetBundle
     public $css = [
         'dist/assets/owl.carousel.min.css',
         'dist/assets/owl.theme.default.min.css',
-        'animate.css',
+        'src/animate.css',
         'custom.css',
     ];
     public $js = [
